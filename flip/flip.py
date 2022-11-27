@@ -54,7 +54,7 @@ class Count:
         self.flip_count = 3
         self.size = V(20, 10)
 
-        self.up_image = pygame.image.load("uparrow.png").convert_alpha()
+        self.up_image = pygame.image.load("graphics/uparrow.png").convert_alpha()
         self.up_image = pygame.transform.scale(self.up_image, self.size)
         self.up_rect = pygame.Rect(340, 323, self.size.x, self.size.y)
 
@@ -128,7 +128,7 @@ class StartScreen:
     def drawLogo(self):
         logo_pos = V(360, 140)
         logo_size = V(250, 125)
-        logo_image = pygame.image.load("logo.png").convert_alpha()
+        logo_image = pygame.image.load("graphics/logo.png").convert_alpha()
         logo_image = pygame.transform.scale(logo_image, logo_size)
         logo_rect = logo_image.get_rect(center=logo_pos)
 
@@ -142,19 +142,19 @@ class StartScreen:
 
 class Tutorial:
     def __init__(self):
-        self.qbits = pygame.image.load("eg.png").convert_alpha()
+        self.qbits = pygame.image.load("graphics/eg.png").convert_alpha()
         self.qbits = pygame.transform.scale(self.qbits, (250, 25))
         self.qbits_rect = pygame.Rect(75, 180, 200, 20)
 
         self.harrow_size = 80
-        self.left_arrow = pygame.image.load("leftarrow.png").convert_alpha()
+        self.left_arrow = pygame.image.load("graphics/leftarrow.png").convert_alpha()
         self.left_arrow = pygame.transform.scale(self.left_arrow, (self.harrow_size, self.harrow_size))
         self.left_arrow_rect = pygame.Rect(450, 130, self.harrow_size, self.harrow_size)
         self.right_arrow = pygame.transform.flip(self.left_arrow, True, False)
         self.right_arrow_rect = pygame.Rect(530, 130, self.harrow_size, self.harrow_size)
 
         self.varrow_size = V(20, 10)
-        self.up_arrow = pygame.image.load("uparrow.png").convert_alpha()
+        self.up_arrow = pygame.image.load("graphics/uparrow.png").convert_alpha()
         self.up_arrow = pygame.transform.scale(self.up_arrow, (self.varrow_size.x, self.varrow_size.y))
         self.up_arrow_rect = pygame.Rect(190, 319, self.varrow_size.x, self.varrow_size.y)
         self.down_arrow = pygame.transform.flip(self.up_arrow, False, True)
@@ -166,7 +166,7 @@ class Tutorial:
         self.button_rect = pygame.draw.circle(screen, pygame.Color("black"), self.button_pos, self.radius + 3)
 
         self.back_size = V(30, 30)
-        self.back = pygame.image.load("return.png").convert_alpha()
+        self.back = pygame.image.load("graphics/return.png").convert_alpha()
         self.back = pygame.transform.scale(self.back, (self.back_size.x, self.back_size.y))
         self.back_rect = pygame.Rect(10, 10, self.back_size.x, self.back_size.y)
 
@@ -320,17 +320,17 @@ class MainGame:
         self.menu_bg_rect2 = pygame.Rect(274, 270, 150, 35)
 
         self.help_size = V(34, 34)
-        self.help = pygame.image.load("help.png").convert_alpha()
+        self.help = pygame.image.load("graphics/help.png").convert_alpha()
         self.help = pygame.transform.scale(self.help, (self.help_size.x, self.help_size.y))
         self.help_rect = pygame.Rect(9, 9, self.help_size.x, self.help_size.y)
 
         self.replay_size = V(30, 30)
-        self.replay = pygame.image.load("replay.png").convert_alpha()
+        self.replay = pygame.image.load("graphics/replay.png").convert_alpha()
         self.replay = pygame.transform.scale(self.replay, (self.replay_size.x, self.replay_size.y))
         self.replay_rect = pygame.Rect(50, 11, self.replay_size.x, self.replay_size.y)
 
         self.menu_size = V(30, 29)
-        self.menu = pygame.image.load("menu.png").convert_alpha()
+        self.menu = pygame.image.load("graphics/menu.png").convert_alpha()
         self.menu = pygame.transform.scale(self.menu, (self.menu_size.x, self.menu_size.y))
         self.menu_rect = pygame.Rect(90, 11, self.menu_size.x, self.menu_size.y)
 
@@ -412,7 +412,7 @@ class MainGame:
     def drawEnd(self):
         box_size1, box_size2 = V(420, 280), V(420, 250)
         box_pos = V(138, 100)
-        box_image = pygame.image.load("win.png").convert_alpha()
+        box_image = pygame.image.load("graphics/win.png").convert_alpha()
         box_image1 = pygame.transform.scale(box_image, box_size1)
         box_image2 = pygame.transform.scale(box_image, box_size2)
         box_rect1 = pygame.Rect(box_pos.x, box_pos.y, box_size1.x, box_size1.y)
@@ -613,11 +613,11 @@ levels_directory = {0: ([1, 1, 1, 0, 0, 0, 0, 0], 1),
 pygame.init()
 screen = pygame.display.set_mode((700, 500))
 clock = pygame.time.Clock()
-win_font = pygame.font.Font("futura medium bt.ttf", 48)
-level_font = pygame.font.Font("futura medium bt.ttf", 40)
-target_font = pygame.font.Font("futura medium bt.ttf", 30)
-retry_font = pygame.font.Font("futura medium bt.ttf", 21)
-flip_font = pygame.font.Font("futura medium bt.ttf", 16)
-ex_font = pygame.font.Font("futura light bt.ttf", 18)
+win_font = pygame.font.Font("fonts/futura medium bt.ttf", 48)
+level_font = pygame.font.Font("fonts/futura medium bt.ttf", 40)
+target_font = pygame.font.Font("fonts/futura medium bt.ttf", 30)
+retry_font = pygame.font.Font("fonts/futura medium bt.ttf", 21)
+flip_font = pygame.font.Font("fonts/futura medium bt.ttf", 16)
+ex_font = pygame.font.Font("fonts/futura light bt.ttf", 18)
 
 startScreen(screen)
